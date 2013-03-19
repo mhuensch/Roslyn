@@ -6,6 +6,15 @@ namespace Run00.Roslyn
 {
 	public static class NamespaceOrTypeSymbolExtensions
 	{
+		public static TypeDiff GenerateDiff(this INamespaceOrTypeSymbol type, INamespaceOrTypeSymbol comparedTo)
+		{
+			var result = new TypeDiff();
+
+			return result;
+		}
+
+
+
 		public static bool HasBreakingChanges(this INamespaceOrTypeSymbol type, INamespaceOrTypeSymbol comparedTo)
 		{
 			var members = type.GetMembers().AsEnumerable();
