@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Run00.Roslyn
 {
-	public static class NamespaceSymbolExtensions
+	public static class NamespaceOrTypeSymbolExtensions
 	{
 		public static IEnumerable<INamespaceOrTypeSymbol> GetTypes(this INamespaceSymbol namespaceSymbol)
 		{
@@ -17,6 +17,13 @@ namespace Run00.Roslyn
 
 			return result;
 		}
-	}
 
+		public static TypeDiff CompareTo(this INamespaceOrTypeSymbol symbol, INamespaceOrTypeSymbol comparedTo)
+		{
+			var result = new TypeDiff();
+			result.Original = symbol;
+			result.ComparedTo = comparedTo;
+			return result;
+		}
+	}
 }

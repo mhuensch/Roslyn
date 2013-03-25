@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{046CCA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Run00.Roslyn", "Run00.Roslyn\Run00.Roslyn.csproj", "{2840B3E2-E3DD-4FBA-896F-EC24A2F87D49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Run00.Roslyn.UnitTest", "Run00.Roslyn.UnitTest\Run00.Roslyn.UnitTest.csproj", "{6D1D3099-CE3B-44F0-9F56-42322B739321}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{2840B3E2-E3DD-4FBA-896F-EC24A2F87D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2840B3E2-E3DD-4FBA-896F-EC24A2F87D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2840B3E2-E3DD-4FBA-896F-EC24A2F87D49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1D3099-CE3B-44F0-9F56-42322B739321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1D3099-CE3B-44F0-9F56-42322B739321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1D3099-CE3B-44F0-9F56-42322B739321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1D3099-CE3B-44F0-9F56-42322B739321}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
