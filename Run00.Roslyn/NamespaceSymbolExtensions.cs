@@ -23,6 +23,9 @@ namespace Run00.Roslyn
 			var result = new TypeDiff();
 			result.Original = symbol;
 			result.ComparedTo = comparedTo;
+
+			
+
 			return result;
 		}
 	}
