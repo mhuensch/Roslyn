@@ -73,14 +73,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Content Include="Artifacts\ControlGroup\Test.Sample\IOrderService.cs" />
+    <Content Include="Artifacts\ControlGroup\Test.Sample\LineItem.cs" />
+    <Content Include="Artifacts\ControlGroup\Test.Sample\Order.cs" />
+    <Content Include="Artifacts\ControlGroup\Test.Sample\OrderService.cs" />
+    <Content Include="Artifacts\ControlGroup\Test.Sample\Properties\AssemblyInfo.cs" />
     <Compile Include="Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Run00.Roslyn.Integration.ControlGroup\Run00.Roslyn.Integration.ControlGroup.csproj">
-      <Project>{f1bf062f-0023-481c-90bf-ec02591b76f9}</Project>
-      <Name>Run00.Roslyn.Integration.ControlGroup</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Run00.Roslyn.UnitTest\Run00.Roslyn.UnitTest.csproj">
       <Project>{6d1d3099-ce3b-44f0-9f56-42322b739321}</Project>
       <Name>Run00.Roslyn.UnitTest</Name>
@@ -93,6 +94,11 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Artifacts\ControlGroup\Test.Sample.sln" />
+    <Content Include="Artifacts\ControlGroup\Test.Sample\Test.Sample.csproj" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

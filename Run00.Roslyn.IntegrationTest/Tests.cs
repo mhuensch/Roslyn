@@ -4,14 +4,14 @@ using System.Linq;
 
 namespace Run00.Roslyn.IntegrationTest
 {
-	[TestClass]
+	[TestClass, DeploymentItem(@"..\..\Artifacts")]
 	public class Tests
 	{
 		[TestMethod]
 		public void TestMethod1()
 		{
-			var controlGroup = Solution.Load(@"C:\SourceCode\Run00\Roslyn\Run00.Roslyn.Integration.sln");
-			var testGroup = Solution.Load(@"C:\Users\MediaAdmin\Desktop\Command\Run00.Command.sln");
+			var controlGroup = Solution.Load(@"ControlGroup\Test.Sample.sln");
+			var testGroup = Solution.Load(@"ControlGroup\Test.Sample.sln");
 			var test = controlGroup.Projects.First();
 			var results = controlGroup.CompareTo(testGroup);
 
