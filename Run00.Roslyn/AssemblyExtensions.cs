@@ -5,7 +5,7 @@ namespace Run00.Roslyn
 {
 	public static class AssemblyExtensions
 	{
-		public static IEnumerable<TypeDiff> GenerateDiff(this IAssemblySymbol assembly, IAssemblySymbol comparedTo)
+		public static IEnumerable<TypeDiff> CompareTo(this IAssemblySymbol assembly, IAssemblySymbol comparedTo)
 		{
 			var types = assembly.GlobalNamespace.GetTypes();
 			var comparedToTypes = comparedTo.GlobalNamespace.GetTypes();

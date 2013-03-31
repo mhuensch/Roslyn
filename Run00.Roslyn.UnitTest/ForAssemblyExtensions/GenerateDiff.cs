@@ -20,7 +20,7 @@ namespace Run00.Roslyn.UnitTest.ForAssemblyExtensions
 			var moqNewAssembly = MockAssemblyUsing("2", "3");
 
 			//Act
-			var result = moqOrigAssembly.Object.GenerateDiff(moqNewAssembly.Object);
+			var result = moqOrigAssembly.Object.CompareTo(moqNewAssembly.Object);
 
 			//Assert
 			Assert.AreEqual(3, result.Count());
