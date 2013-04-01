@@ -1,5 +1,6 @@
 ﻿using Roslyn.Compilers.Common;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Run00.Roslyn
 {
@@ -10,21 +11,28 @@ namespace Run00.Roslyn
 			var result = new TypeDiff();
 			result.Original = symbol;
 			result.ComparedTo = comparedTo;
-
-
-
+			result.MethodDifferences = symbol.GetAllContractMembers().FullOuterJoin(comparedTo.GetAllContractMembers(), SymbolComparer.Instance, (a, b) => a.CompareTo(b));
 			return result;
 		}
 
-		public static IEnumerable<INamespaceOrTypeSymbol> GetTypes(this INamespaceSymbol namespaceSymbol)
+		public static IEnumerable<ISymbol> GetAllContractMembers(this INamespaceOrTypeSymbol type)
 		{
-			var result = new List<INamespaceOrTypeSymbol>();
+			if (type == null)
+				return Enumerable.Empty<ISymbol>();
 
-			foreach (var type in namespaceSymbol.GetTypeMembers())
-				result.Add(type);
+			var result = new List<ISymbol>();
+			foreach (var member in type.GetMembers())
+			{
+				if (member.IsContractMember())
+				{
+					result.Add(member);
+				}
+			}
 
-			foreach (var childNamespace in namespaceSymbol.GetNamespaceMembers())
-				result.AddRange(GetTypes(childNamespace));
+			foreach (var nested in type.GetTypeMembers())
+			{
+				result.AddRange(nested.GetAllContractMembers());
+			}
 
 			return result;
 		}

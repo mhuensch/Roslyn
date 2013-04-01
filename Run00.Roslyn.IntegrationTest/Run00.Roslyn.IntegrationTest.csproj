@@ -58,6 +58,10 @@
     <Reference Include="Roslyn.Utilities">
       <HintPath>..\packages\Roslyn.Services.Common.1.2.20906.2\lib\net45\Roslyn.Utilities.dll</HintPath>
     </Reference>
+    <Reference Include="Run00.MsTest, Version=0.10.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Run00.MsTest.0.10.10\lib\Run00.MsTest.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -78,8 +82,21 @@
     <Content Include="Artifacts\ControlGroup\Test.Sample\Order.cs" />
     <Content Include="Artifacts\ControlGroup\Test.Sample\OrderService.cs" />
     <Content Include="Artifacts\ControlGroup\Test.Sample\Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests.cs" />
+    <Content Include="Artifacts\Comments\Test.Sample.sln" />
+    <Content Include="Artifacts\Comments\Test.Sample\IOrderService.cs" />
+    <Content Include="Artifacts\Comments\Test.Sample\LineItem.cs" />
+    <Content Include="Artifacts\Comments\Test.Sample\Order.cs" />
+    <Content Include="Artifacts\Comments\Test.Sample\OrderService.cs" />
+    <Content Include="Artifacts\Comments\Test.Sample\Properties\AssemblyInfo.cs" />
+    <Content Include="Artifacts\Deleted\Test.Sample.sln" />
+    <Content Include="Artifacts\Deleted\Test.Sample\IOrderService.cs" />
+    <Content Include="Artifacts\Deleted\Test.Sample\Order.cs" />
+    <Content Include="Artifacts\Deleted\Test.Sample\Properties\AssemblyInfo.cs" />
+    <Content Include="Artifacts\Deleted\Test.Sample\OrderService.cs" />
+    <Compile Include="IntegrationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Artifacts\Comments\Test.Sample\Test.Sample.csproj" />
+    <Content Include="Artifacts\Deleted\Test.Sample\Test.Sample.csproj" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Run00.Roslyn.UnitTest\Run00.Roslyn.UnitTest.csproj">

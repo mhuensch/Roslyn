@@ -9,11 +9,17 @@ namespace Run00.Roslyn
 {
 	public static class ProjectExtensions
 	{
-		public static IEnumerable<TypeDiff> CompareTo(this IProject project, IProject comparedTo)
+		public static AssemblyDiff CompareTo(this IProject project, IProject comparedTo)
 		{
-			var assembly = project.GetCompilation().Assembly;
-			var comparedToAssembly = comparedTo.GetCompilation().Assembly;
-			return assembly.CompareTo(comparedToAssembly);
+			var result = new AssemblyDiff();
+			result.Original = project.GetCompilation().Assembly;
+			result.ComparedTo = comparedTo.GetCompilation().Assembly;
+			result.TypeDifferences = result.Original.CompareTo(result.ComparedTo);
+
+			if (result.TypeDifferences.Any(d => d.MethodDifferences.Any(m => m.ChangeType != ChangeType.None)))
+				return result;
+
+			return result;
 		}
 	}
 }
